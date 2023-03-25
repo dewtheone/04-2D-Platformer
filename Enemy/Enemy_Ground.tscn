@@ -1,0 +1,64 @@
+[gd_scene load_steps=10 format=2]
+
+[ext_resource path="res://Assets/monochrome_tilemap_transparent_packed_scaled_5x_pngcrushed.png" type="Texture" id=1]
+[ext_resource path="res://Enemy/Enemy_Ground.gd" type="Script" id=2]
+
+[sub_resource type="AtlasTexture" id=28]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 80, 960, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=29]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 160, 1040, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=30]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 240, 1120, 80, 80 )
+
+[sub_resource type="AtlasTexture" id=31]
+flags = 4
+atlas = ExtResource( 1 )
+region = Rect2( 320, 1200, 80, 80 )
+
+[sub_resource type="SpriteFrames" id=32]
+animations = [ {
+"frames": [ SubResource( 28 ), SubResource( 29 ), SubResource( 30 ), SubResource( 31 ) ],
+"loop": true,
+"name": "default",
+"speed": 8.0
+} ]
+
+[sub_resource type="CircleShape2D" id=34]
+radius = 28.6531
+
+[sub_resource type="CircleShape2D" id=35]
+radius = 23.0
+
+[node name="Enemy_Ground" type="KinematicBody2D"]
+collision_layer = 9
+collision_mask = 9
+script = ExtResource( 2 )
+
+[node name="Sprite" type="AnimatedSprite" parent="."]
+position = Vector2( 1329, 246 )
+frames = SubResource( 32 )
+frame = 1
+playing = true
+flip_h = true
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 9
+collision_mask = 9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1327, 254 )
+shape = SubResource( 34 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2( 1327, 254 )
+shape = SubResource( 35 )
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_Area2D_body_entered"]
