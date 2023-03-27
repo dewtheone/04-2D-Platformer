@@ -12,6 +12,7 @@ func _physics_process(_delta):
 	if direction > 0:
 		$Sprite.flip_h = false
 	velocity.x += direction * speed
+	# warning-ignore:return_value_discarded
 	move_and_slide_with_snap(velocity, Vector2.UP)
 
 

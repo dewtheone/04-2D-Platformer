@@ -12,13 +12,13 @@ export var move_speed = 20
 export var max_move = 300
 
 export var jump_speed = 200
-export var max_jump = 1200
+export var max_jump = 300
 
 export var leap_speed = 200
-export var max_leap = 1200
 
 var moving = false
 var is_jumping = false
+var jump_reset = true
 var double_jumped = false
 var should_direction_flip = true # wether or not player controls (left/right) can flip the player sprite
 
@@ -33,6 +33,8 @@ func _physics_process(_delta):
 	if is_on_floor():
 		double_jumped = false
 		set_wall_raycasts(true)
+	if not Input.is_action_pressed("jump"):
+		jump_reset = true
 
 func is_moving():
 	if Input.is_action_pressed("left") or Input.is_action_pressed("right"):
@@ -70,8 +72,10 @@ func is_on_left_wall():
 		return true
 	return false
 
-func do_damage(_d):
-	queue_free()
+func do_damage(d):
+	Global.decrease_health(d)
+	if Global.health <= 0:
+		die()
 
 func get_right_collider():
 	return $Wall/Right.get_collider()
@@ -84,4 +88,5 @@ func set_wall_raycasts(is_enabled):
 	$Wall/Right.enabled = is_enabled
 
 func die():
+	Global.decrease_lives(1)
 	queue_free()

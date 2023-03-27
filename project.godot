@@ -14,7 +14,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Godot Project Template"
+config/name="2D Platformer"
 run/main_scene="res://Levels/Level1.tscn"
 config/icon="res://icon.png"
 
@@ -47,4 +47,5 @@ attack={
 
 [rendering]
 
+2d/snapping/use_gpu_pixel_snap=true
 environment/default_environment="res://default_env.tres"
