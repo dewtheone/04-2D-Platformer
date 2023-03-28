@@ -16,6 +16,7 @@ This is a game where you can move around and jump in order to collect hearts and
 
 ## References
 Created using the Godot Project Template provided by Jason Francis
+
 Music is Powerup! by Jeremy Blake
 
 ## Future Development
