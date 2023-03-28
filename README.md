@@ -6,9 +6,13 @@ This is a game where you can move around and jump in order to collect hearts and
 
 ## Implementation
 -Multiple Levels
+
 -Background Music
+
 -Different Sprites
+
 -Fixed Platforming Jump
+
 
 ## References
 Created using the Godot Project Template provided by Jason Francis
