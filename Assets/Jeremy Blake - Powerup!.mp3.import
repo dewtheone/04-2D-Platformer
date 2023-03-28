@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Jeremy Blake - Powerup!.mp3-9924b522432780a68f61ff427a02aff3.mp3str"
+
+[deps]
+
+source_file="res://Assets/Jeremy Blake - Powerup!.mp3"
+dest_files=[ "res://.import/Jeremy Blake - Powerup!.mp3-9924b522432780a68f61ff427a02aff3.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
