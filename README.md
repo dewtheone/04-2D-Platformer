@@ -13,6 +13,8 @@ This is a game where you can move around and jump in order to collect hearts and
 
 -Fixed Platforming Jump
 
+-Bottomless Pit Trap
+
 
 ## References
 Created using the Godot Project Template provided by Jason Francis
